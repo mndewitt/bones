@@ -56,3 +56,17 @@ temp/
 
 *.codekit
 *.scssc
+
+###########
+## npm install
+###########
+
+node_modules/
+
+###########
+## Ignore compiled css
+###########
+
+library/css/*.css
+
+

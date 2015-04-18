@@ -534,11 +534,11 @@ probably best not to use it. I mean, were you going to anyway? */
     -o-font-feature-settings: "liga", "dlig";
     font-feature-settings: "liga", "dlig"; }
   body#tinymce.wp-editor a, body#tinymce.wp-editor a:visited {
-    color: #2980b9;
+    color: #f01d4f;
     /* on hover */
     /* on click */ }
     body#tinymce.wp-editor a:hover, body#tinymce.wp-editor a:focus, body#tinymce.wp-editor a:visited:hover, body#tinymce.wp-editor a:visited:focus {
-      color: #216693; }
+      color: #d10e3f; }
     body#tinymce.wp-editor a:link, body#tinymce.wp-editor a:visited:link {
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
   body#tinymce.wp-editor h1, body#tinymce.wp-editor .h1, body#tinymce.wp-editor h2, body#tinymce.wp-editor .h2, body#tinymce.wp-editor h3, body#tinymce.wp-editor .h3, body#tinymce.wp-editor h4, body#tinymce.wp-editor .h4, body#tinymce.wp-editor h5, body#tinymce.wp-editor .h5 {
