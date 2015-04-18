@@ -1,16 +1,17 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-        sass: {                                  
-          dist: {                                  
-              files: [{
-              expand: true,
-              cwd: 'library/scss',
-              src: ['*.scss'],
-              dest: 'library/css',
-              ext: '.css'
-            }]
-         }
+      
+      sass: {                                  
+        dist: {                                  
+          files: [{
+            expand: true,
+            cwd: 'library/scss',
+            src: ['*.scss'],
+            dest: 'library/css',
+            ext: '.css'
+          }]
+        }
       },
       
       cssmin: {
@@ -20,10 +21,18 @@ module.exports = function(grunt) {
           }
         }
       },
-      
+
+      uglify: {
+        my_target: {
+          files: {
+            'library/js/scripts.min.js': ['library/js/scripts.js']
+          }
+        }
+      },
+
       watch: {                                                         
-            files: ['library/scss/**/*.scss'],
-            tasks: ['sass', 'cssmin']     
+            files: ['library/scss/**/*.scss', 'library/js/scripts.js'],
+            tasks: ['sass', 'cssmin', 'uglify']     
       }
   });
 
@@ -31,9 +40,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   //Register the tasks
-  grunt.registerTask('default', ['sass', 'cssmin']);
+  grunt.registerTask('default', ['sass', 'cssmin', 'uglify']);
 
 
 }
