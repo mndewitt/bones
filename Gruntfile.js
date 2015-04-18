@@ -13,18 +13,27 @@ module.exports = function(grunt) {
          }
       },
       
-        watch: {                                                         
+      cssmin: {
+        target: {
+          files: {
+            'library/css/style.min.css': ['library/css/style.css']
+          }
+        }
+      },
+      
+      watch: {                                                         
             files: ['library/scss/**/*.scss'],
-            tasks: ['sass']     
+            tasks: ['sass', 'cssmin']     
       }
   });
 
   //Load Grunt plugins
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   //Register the tasks
-  grunt.registerTask('default', ['sass']);
+  grunt.registerTask('default', ['sass', 'cssmin']);
 
 
 }
