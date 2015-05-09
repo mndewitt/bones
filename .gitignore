@@ -63,12 +63,4 @@ temp/
 
 node_modules/
 
-###########
-## Ignore compiled css/js
-## Run Grunt initially to create directory and files
-###########
-
-library/css/
-library/js/scripts.min.js
-
 

@@ -13,37 +13,19 @@ module.exports = function(grunt) {
           }]
         }
       },
-      
-      cssmin: {
-        target: {
-          files: {
-            'library/css/style.min.css': ['library/css/style.css']
-          }
-        }
-      },
-
-      uglify: {
-        my_target: {
-          files: {
-            'library/js/scripts.min.js': ['library/js/scripts.js']
-          }
-        }
-      },
 
       watch: {                                                         
-            files: ['library/scss/**/*.scss', 'library/js/scripts.js'],
-            tasks: ['sass', 'cssmin', 'uglify']     
+            files: ['library/scss/**/*.scss'],
+            tasks: ['sass']     
       }
   });
 
   //Load Grunt plugins
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   //Register the tasks
-  grunt.registerTask('default', ['sass', 'cssmin', 'uglify']);
+  grunt.registerTask('default', ['sass']);
 
 
 }
